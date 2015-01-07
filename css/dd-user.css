@@ -1,0 +1,191 @@
+#git-user-container
+{
+	position: relative;
+	height: auto;	
+}
+
+a,img,button
+{
+	outline: none !important;
+}
+
+#git-user-container .git-loader
+{
+	position: absolute;
+	left: 45%;
+	top: 45%;
+}
+
+.git-error
+{
+	border: 1px solid #ac5330 !important;
+	color: #cccccc;
+}
+
+#git-user-container p 
+{
+    margin-bottom: 0 !important;
+}
+
+#git-user-container #submit-contact-form
+{
+	color: #FFFFFF;
+    font-size: 18px;
+    border: 1px solid #cccccc;
+    font-weight: 400;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-transform: none !important;
+    padding: 5px 15px;
+    background-image: none !important;
+    transition-duration:1s;
+	-webkit-transition-duration:1s;
+    opacity: 1;
+}
+
+#git-user-container #submit-contact-form:hover
+{
+	opacity: 0.65;
+	background-image: none !important;
+	transition-duration:1s;
+	-webkit-transition-duration:1s;
+}
+
+#git-user-container .git_thanks_text 
+{
+    color: #008000;
+    font-size: 20px;
+    text-align: left;
+}
+
+#git-user-container i
+{
+	color: red;
+}
+
+.git-fields-container i p
+{
+	font-size: 13px;
+	background: url('../img/cancel.png') no-repeat left center;
+	padding-left: 15px;
+}
+
+#git-user-container input, #git-user-container input
+{
+	border: 1px solid #cccccc;
+}
+
+#git-user-container input:focus, #git-user-container textarea:focus
+{
+	border-color: #66afe9;
+    outline: 0 none;
+}
+
+#git-user-container input, #git-user-container textarea, #git-user-container select
+{
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #cccccc;
+	resize: none;
+	color: #252525;
+}
+
+#recaptcha_area, #recaptcha_table
+{
+	width: 100% !important;
+}
+
+#map_can
+{
+	height: 400px;
+	width: 100%;
+}
+
+.git-map-container 
+{
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ebebeb;
+    padding: 4px;
+}
+
+.git-section
+{
+	margin: 20px auto;
+}
+
+select.error, input.error, textarea.error 
+{    
+    color: #000000;
+    border: 1px solid #ac5330;
+    transition-duration: 1s;
+}
+
+
+.git-error-msg
+{
+    color: #ff0010;
+    font-size: 14px;
+}
+
+#git-form input, #git-form textarea
+{
+	border: 1px solid #c1c1c1;
+    height: 45px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+#git-form textarea
+{
+	height: 130px;
+    resize: none;    
+}
+
+#git-form input:focus, #git-form textarea:focus
+{
+	border-color: #3399ff;
+}
+
+.git-form-group
+{
+	margin-bottom: 15px;
+}
+
+.git-btn-primary
+{
+	border-color: transparent;
+	background-color: #428bca;
+}
+
+.git-btn-success
+{
+	border-color: transparent;
+	background-color: #5cb85c;
+}
+
+.git-btn-default
+{
+	border: 1px solid #cccccc;
+	color: #333333 !important;
+	background-color: #ffffff;
+}
+
+.git-btn-default:hover, .git-btn-default:focus, .git-btn-default:active
+{
+	border-color: #adadad;
+	color: #333333 !important;
+	background-color: #e6e6e6;
+}
+
+.git-btn-lg
+{
+	height: 50px;
+	color: #ffffff;
+	width: 100%;
+	display: block;
+	margin: auto;
+	border-radius: 4px;
+	text-align: center;
+}

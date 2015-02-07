@@ -15,28 +15,19 @@ class DD
 	public function init()
 	{
 		// Short codes
-        add_shortcode( "datadash_counter", array($this, "ddCounter"));
-
-  //       		global $wpdb;
-		// $table_prefix = $wpdb->prefix;
-		// $dd_counters = $table_prefix.'dd_counters';	
-		
-		// $wpdb->insert($dd_counters,
-		// 			array(
-		// 				'name'     	=> 'This is test',
-		// 				'value' 				=> 11125, 
-		// 				'inc_range_start'      => 111,
-		// 				'inc_range_end'		=> 112,
-		// 				'timeperiod'    => 113
-		// 				),
-		// 			array('%s',	'%d', '%d', '%d', '%d')   
-		// 			); 
-
+        add_shortcode( "dd_counter", array(DD::get_instance(), "ddCounter"));
 	}
 
-	public function ddCounter()
+	public function ddCounter($atts)
 	{
+		$a = shortcode_atts( array('id'), $atts );
 
+		return DDView::printCounter($a['id']);
+	}
+
+	public function get_ddCounter($id)
+	{
+		return DDView::printCounter($id);
 	}
 }
 

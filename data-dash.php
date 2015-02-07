@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Data Dash
-Plugin URI: http://labs.think201.com/data-dash
-Description: Data Dash plugin allows
+Plugin URI: http://labs.think201.com/plugins/data-dash
+Description: Data dash allows you to create dynamic counters for your website pages.
 Author: Think201
-Version: 1.0
+Version: 1.0.1
 Author URI: http://www.think201.com
 License: GPL v1
 
@@ -52,7 +52,7 @@ if ( !defined( 'DD_BASENAME' ) )
 define( 'DD_BASENAME', plugin_basename( __FILE__ ) );
 
 if ( !defined( 'DD_VERSION' ) )
-define('DD_VERSION', '1.0.5' );
+define('DD_VERSION', '1.0.1' );
 
 if ( !defined( 'DD_PLUGIN_DIR' ) )
 define('DD_PLUGIN_DIR', dirname(__FILE__) );
@@ -63,10 +63,13 @@ define( 'DD_LOAD_JS', true );
 if ( ! defined( 'DD_LOAD_CSS' ) )
 define( 'DD_LOAD_CSS', true );	
 
+require_once DD_PLUGIN_DIR .'/includes/dd-cron.php';
 require_once DD_PLUGIN_DIR .'/includes/dd-install.php';
 
 require_once DD_PLUGIN_DIR .'/includes/dd-admin.php';
 require_once DD_PLUGIN_DIR .'/includes/dd.php';
+add_action( 'ddcronjob',  array('DDCron', 'cronjob'));
+add_filter('cron_schedules', array('DDCron','dd_schedules'));
 
 register_activation_hook( __FILE__, array('DD_Install', 'activate') );
 register_deactivation_hook( __FILE__, array('DD_Install', 'deactivate') );

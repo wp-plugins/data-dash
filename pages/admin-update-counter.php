@@ -29,7 +29,7 @@ else
 			<a href="<?php echo wp_nonce_url($counterlist, 'counterlist' ); ?>">
 		  		<button class="button button-primary" type="button">Data Dash Counters</button>
 		  	</a>
-		  	<a href="http://labs.think201.com/data-dash" target="_blank" class="pull-right">Need help?</a>
+		  	<a href="http://labs.think201.com/plugins/data-dash" target="_blank" class="pull-right">Need help?</a>
 		</div>
 		<div class="tbox-body">
 			<form name="dd_counter_update_form" id="dd_counter_update_form" action="#" method="post">		        

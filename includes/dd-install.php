@@ -4,14 +4,13 @@ class DD_Install
 {
 	//Function to Setup DB Tables
 	public static function activate()
-	{
+	{		
 		global $wpdb;
-		$table_prefix = $wpdb->prefix;
-		$dd_counters = $table_prefix.'dd_counters';
+		$dd_counters = $$wpdb->prefix.'dd_counters';
 
 		$dd_counter_table = "CREATE TABLE IF NOT EXISTS $dd_counters(
 		id INT(9) UNSIGNED NOT NULL AUTO_INCREMENT,
-		name VARCHAR(300) NOT NULL,	
+		name VARCHAR(300) NOT NULL,
 		value BIGINT UNSIGNED NOT NULL,
 		inc_range_start INT NOT NULL,
 		inc_range_end INT NOT NULL,
@@ -20,8 +19,9 @@ class DD_Install
 		Primary Key id (id)
 		)ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-		$wpdb->query($dd_counter_table);
+		$wpdb->query($dd_counter_table);		
 
+		wp_schedule_event( time(), 'everyfivesec', 'ddcronjob' );
 	}
 
 	public static function deactivate()

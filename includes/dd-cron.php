@@ -11,7 +11,7 @@ class DDCron
         $val = get_option($option_name);
 
         if($val !== false)
-        {            
+        {
             // The option already exists, so we just update it.
             update_option($option_name, $time);
         } 
@@ -40,7 +40,7 @@ class DDCron
     }
 
     public static function dd_schedules($schedules) 
-    {      
+    {
         if (!isset($schedules['everyfivesec']))
         {            
             $schedules['everyfivesec'] = array( 'interval' => 5, 'display' => __('Every Five Sec') );
@@ -55,7 +55,7 @@ class DDCron
         {
             $schedules['everyfivemins'] = array( 'interval' => 300, 'display' => __('Every Five Mins') );
         }
-        
+
         return $schedules;        
     }
 }

@@ -4,7 +4,7 @@ Plugin Name: Data Dash
 Plugin URI: http://labs.think201.com/plugins/data-dash
 Description: Data dash allows you to create dynamic counters for your website pages.
 Author: Think201
-Version: 1.0.1
+Version: 1.1
 Author URI: http://www.think201.com
 License: GPL v1
 
@@ -52,7 +52,7 @@ if ( !defined( 'DD_BASENAME' ) )
 define( 'DD_BASENAME', plugin_basename( __FILE__ ) );
 
 if ( !defined( 'DD_VERSION' ) )
-define('DD_VERSION', '1.0.1' );
+define('DD_VERSION', '1.1' );
 
 if ( !defined( 'DD_PLUGIN_DIR' ) )
 define('DD_PLUGIN_DIR', dirname(__FILE__) );

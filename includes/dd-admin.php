@@ -17,7 +17,7 @@ class DDAdmin
 
         add_action('admin_menu', array($this, 'menuItems')); 
 
-        add_action( 'init', array($this, 'userFiles'));       
+        add_action( 'init', array($this, 'userFiles')); 
     }
 
     public function fileInlcudes()
@@ -25,7 +25,7 @@ class DDAdmin
         require_once DD_PLUGIN_DIR .'/includes/post-requests.php';
         require_once DD_PLUGIN_DIR .'/includes/dd-data.php';
         require_once DD_PLUGIN_DIR .'/includes/user-post-requests.php';
-        require_once DD_PLUGIN_DIR .'/includes/dd-helper.php';        
+        require_once DD_PLUGIN_DIR .'/includes/dd-helper.php';
         require_once DD_PLUGIN_DIR .'/includes/dd-view.php';
         require_once DD_PLUGIN_DIR .'/includes/dd-listtable.php';
     }
@@ -60,7 +60,6 @@ class DDAdmin
     {
         if (!is_admin()) 
         {
-            wp_enqueue_style( 'dd-user-css', plugins_url( 'data-dash/assets/css/dd-user.css' ), '', DD_VERSION, 'all' );
             wp_enqueue_script( 'user-ajax-request', plugins_url( 'data-dash/js/dd-user.js' ), array( 'jquery' ), false, true );
             wp_localize_script( 'user-ajax-request', 'DDUserAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );                 
         }

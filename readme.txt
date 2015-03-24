@@ -4,8 +4,8 @@ Tags: Data Dash, website counter, counter
 Requires at least: 3.5.2
 Donate link: http://www.think201.com/
 Tested up to: 4.1
-Stable tag: 1.0.1
-Version: 1.0.1
+Stable tag: 1.1
+Version: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,4 +75,8 @@ To be updated soon
 - First commit to the WP repository.
 
 = 1.0.1 =
-- First commit to the WP repository.
+- Updated the admin listing style.
+
+= 1.1 =
+- Raw conuter included.
+- CSS Optimization

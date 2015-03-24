@@ -17,7 +17,7 @@ var DDForm = {
         type: 'post',
         data: DDForm.settings.formObj.serialize(),
         success: function(data, status) 
-        {
+        {                        
           if(data.status == true)
           {
             $('.dd-success-msg').fadeIn(1000).siblings('.dd-msg').hide();
@@ -30,7 +30,7 @@ var DDForm = {
           }
         },
         error: function()
-        {           
+        {             
           $('.dd-error-msg').fadeIn(1000).siblings('.dd-msg').hide();
           //$(FormId)[0].reset();  
         }                        

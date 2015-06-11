@@ -15,7 +15,7 @@ class DD
 	public function init()
 	{
 		// Short codes
-        add_shortcode( "dd_counter", array(DD::get_instance(), "ddCounter"));
+      add_shortcode( "dd_counter", array(DD::get_instance(), "ddCounter"));
 	}
 
 	public function ddCounter($atts)

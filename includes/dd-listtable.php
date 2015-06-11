@@ -89,6 +89,7 @@ class DDListTable extends \WP_List_Table
             'range'  => __( 'Increment Range' ),
             'timeperiod'  => __( 'Time Period' ),
             'function'  => __( 'Function' ),
+            'shortcode'  => __( 'Shortcode' ),
             'action'  => __( 'Action' )
             );
 
@@ -219,7 +220,9 @@ class DDListTable extends \WP_List_Table
 
             $item->range = $item->inc_range_start.' - '.$item->inc_range_end;
 
-            $item->function = 'getDashCounter('.$item->id.');';
+            $item->function = 'if( function_exists("getDashCounter")){ getDashCounter('.$item->id.');}';
+
+            $item->shortcode = '[datadash id="'.$item->id.'" timeout="60"]';
 
             $item->action = '<a href="admin.php?page=dd-update-counter&action=update&id='.$item->id.'">Update</a>';
 

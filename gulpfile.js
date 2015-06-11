@@ -8,7 +8,7 @@ var jsDir   = 'js';
 
 var jsListUser = 
 [
-	'js/dd-user.js'
+	jsDir+'/dd-user.js'
 ];
 
 gulp.task('watch', function () 
@@ -19,10 +19,8 @@ gulp.task('watch', function ()
 
 gulp.task('css', function () 
 {
-  	gulp.src('scss/dd.scss')
-  	.pipe(sass({sourcemapPath: 'scss', style: 'compressed'}))
-  	.on('error', function (err) { console.log(err.message); })
-    .pipe(gulp.dest('./assets/css'));    
+  return sass(cssDir)
+  .pipe(gulp.dest('./assets/css'));   
 });
 
 gulp.task('js', function () 

@@ -7,9 +7,8 @@ class DDData
 {
 	public static function getCounters()
 	{
-		global $wpdb;
-		$table_prefix = $wpdb->prefix;
-		$dd_counters = $table_prefix.'dd_counters';	
+		global $wpdb;		
+		$dd_counters = $wpdb->prefix.'dd_counters';	
 
 		$active = 'active';
 		
@@ -19,11 +18,23 @@ class DDData
 		return $Data;
 	}
 
+	public static function getCountersByTimePeriod($TimePeriod)
+	{
+		global $wpdb;		
+		$dd_counters = $wpdb->prefix.'dd_counters';	
+
+		$active = 'active';
+
+		$Query = $wpdb->prepare( "SELECT * FROM $dd_counters WHERE timeperiod = %s AND status = %s", $TimePeriod, $active);	
+		$Data = $wpdb->get_results($Query);
+
+		return $Data;
+	}
+
 	public static function getCounter($id)
 	{
-		global $wpdb;
-		$table_prefix = $wpdb->prefix;
-		$dd_counters = $table_prefix.'dd_counters';	
+		global $wpdb;		
+		$dd_counters = $wpdb->prefix.'dd_counters';	
 
 		$active = 'active';
 

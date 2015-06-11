@@ -1,6 +1,5 @@
 <?php
 $Data = DDData::getCounters(); 
-
 $wp_list_table = new dd\DDListTable();
 
 ?>

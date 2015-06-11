@@ -56,7 +56,17 @@ else
 		                   	</div>
 		                    <div class="dd-fields-container">  
 		                        <label for="timeperiod">Time Period:</label>              
-		                    	<input type="text" id="timeperiod" name="timeperiod" placeholder="Enter Time Period" value="<?php echo $Data->timeperiod; ?>">
+		                    		<select id="timeperiod" name="timeperiod">
+		                    			<?php
+		                    				$DefinedCronSchedule = ddDefineTheCustomCronEvent();
+		                    				foreach ($DefinedCronSchedule as $key => $value) 
+		                    				{
+		                    			?>
+													<option <?php echo ($Data->timeperiod == $key) ? 'selected="selected"' : '' ?> value="<?php echo $key; ?>"><?php echo $value; ?></option>
+		                    			<?php
+		                    				}
+		                    			?>
+		                    		</select>	
 		                    </div>
 		                </div>		                
 		            </div> 

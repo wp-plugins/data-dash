@@ -38,8 +38,18 @@
 		                        <input type="text" id="inc_range_end" name="inc_range_end" placeholder="Enter Increment Value">
 		                   	</div>
 		                    <div class="dd-fields-container">  
-		                        <label for="timeperiod">Time Period:</label>              
-		                    	<input type="text" id="timeperiod" name="timeperiod" placeholder="Enter Time Period">
+		                        <label for="timeperiod">Time Period: (In Minutes)</label>              
+		                    		<select id="timeperiod" name="timeperiod">
+		                    			<?php
+		                    				$DefinedCronSchedule = ddDefineTheCustomCronEvent();
+		                    				foreach ($DefinedCronSchedule as $key => $value) 
+		                    				{
+		                    			?>
+													<option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+		                    			<?php
+		                    				}
+		                    			?>
+		                    		</select>		                    	
 		                    </div>
 		                </div>		                
 		            </div> 

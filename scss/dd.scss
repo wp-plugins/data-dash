@@ -276,3 +276,46 @@ input[type=checkbox].css-checkbox.lrg:checked + label.css-label.lrg
     font-size: 16px;
     border: 1px solid #dddddd;
 }
+
+.dd_counter {
+    border: 2px solid #c7c7c7;
+    display: table;
+    padding: 20px 0;
+    margin: 10px auto;
+    width: 99%;
+    text-align: center;
+
+    h2 {
+        color: #1abc9c;
+        font-family: "Roboto",sans-serif;
+        font-size: 2.3rem;
+        font-weight: 600;
+        margin: 0 auto 10px;
+        padding: 0;     
+        display: table;   
+        text-align: center;
+
+        .dd_number {
+            padding: 0 1px;
+        }
+
+        .dd_comma {
+            margin-left: 0 !important;
+            margin-right: 3 !important;
+        }
+    }
+
+    p {
+        color: #767676;
+        font-family: "Roboto",sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        text-align: center;
+        margin-top: 5px;
+        display: table;
+        margin: auto;
+        padding: 0;
+        margin-bottom: 0;
+    }
+}

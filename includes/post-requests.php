@@ -18,6 +18,9 @@ class PostData
 		// Insert data into DB
 		$RetVal = self::saveData($Data);
 
+		// Check if cron is running for timeperiod
+		$Cron = self::ddCheckOrCreateCron($Data);
+
 		if($RetVal)
 		{	
 			$response = array(					   					 
@@ -95,7 +98,7 @@ class PostData
 						'timeperiod'    	=> $Data['timeperiod'],
 						'status'    		=> 'active'
 						),
-					array('%s',	'%d', '%d', '%d', '%d', '%s')   
+					array('%s',	'%d', '%d', '%d', '%s', '%s')   
 					); 
 
 		return true;
@@ -121,6 +124,22 @@ class PostData
 						'id'      	=> $Data['update_id']
 						),
 					$format = null, $where_format = null );		
+
+		return true;
+	}
+
+	public static function ddCheckOrCreateCron($Data)
+	{
+		// get the name from cron job
+		$cronname = getTheTimePeriodName($Data['timeperiod']);
+
+		// Check if cron exist for current timeperiod
+		if( !wp_next_scheduled( $cronname ) ) 
+		{
+			$Timestamp = ddGetCustomSchudler();
+
+			wp_schedule_event( $Timestamp[$Data['timeperiod']], $Data['timeperiod'], $cronname );
+		}	
 
 		return true;
 	}

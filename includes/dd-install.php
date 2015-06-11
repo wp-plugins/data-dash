@@ -6,7 +6,7 @@ class DD_Install
 	public static function activate()
 	{
 		global $wpdb;
-		$dd_counters = $$wpdb->prefix.'dd_counters';
+		$dd_counters = $wpdb->prefix.'dd_counters';
 
 		$dd_counter_table = "CREATE TABLE IF NOT EXISTS $dd_counters(
 		id INT(9) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -14,31 +14,35 @@ class DD_Install
 		value BIGINT UNSIGNED NOT NULL,
 		inc_range_start INT NOT NULL,
 		inc_range_end INT NOT NULL,
-		timeperiod INT NOT NULL,
+		timeperiod VARCHAR(255) NOT NULL,
 		status VARCHAR(10) NOT NULL,
 		Primary Key id (id)
 		)ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-		$wpdb->query($dd_counter_table);
-
-		wp_schedule_event( time(), 'everyfivesec', 'ddcronjob' );
+		$wpdb->query($dd_counter_table);		
 	}
 
 	public static function deactivate()
 	{
-		wp_clear_scheduled_hook('ddcronjob');
-
 		return true;
 	}
 
 	public static function delete()
 	{
-		global $wpdb;
-		$table_prefix = $wpdb->prefix;
-		$dd_counters = $table_prefix.'dd_counters';
+		global $wpdb;		
+		$dd_counters = $wpdb->prefix.'dd_counters';
 
 		$dd_counter_table = "DROP TABLE $dd_counters;";
-		$wpdb->query($git_contact_form_data);
+		$wpdb->query($dd_counter_table);
+
+		wp_clear_scheduled_hook( 'dd_fivemincronjob' );
+		wp_clear_scheduled_hook( 'dd_twelvehourscronjob' );
+		wp_clear_scheduled_hook( 'dd_dailycronjob' );
+		wp_clear_scheduled_hook( 'dd_threedayscronjob' );
+		wp_clear_scheduled_hook( 'dd_everyweekcronjob' );
+		wp_clear_scheduled_hook( 'dd_everymonthcronjob' );
+
+		return true;
 	}
 }
 

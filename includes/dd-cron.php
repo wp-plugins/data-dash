@@ -2,60 +2,104 @@
 
 class DDCron
 {
-    public static function cronjob() 
+    public static function cronJobForFiveMin() 
     {
-        $option_name = 'ddcronvalue';
+        self::dd_update_counter('everyfivemins');        
+    }
 
-        $time = date( 'h:ia', time() );
+    public static function cronJobForTwelveHours() 
+    {
+        self::dd_update_counter('everytwelvehours');        
+    }
 
-        $val = get_option($option_name);
+    public static function cronJobForDaily() 
+    {
+        self::dd_update_counter('everyday');        
+    }
 
-        if($val !== false)
-        {
-            // The option already exists, so we just update it.
-            update_option($option_name, $time);
-        } 
-        else 
-        {
-            // The option hasn't been added yet. We'll add it with $autoload set to 'no'.
-            $deprecated = null;
-            $autoload = 'no';
-            add_option($option_name, $time, $deprecated, $autoload);
-        }
+    public static function cronJobForThreeDays() 
+    {
+        self::dd_update_counter('everythreedays');        
+    }
 
-        global $wpdb;
-        $table_prefix = $wpdb->prefix;
-        $dd_counters = $table_prefix.'dd_counters'; 
-        
-        $wpdb->insert($dd_counters,
-            array(
-                'name'      => 'This is test',
-                'value'                 => 11125, 
-                'inc_range_start'      => 111,
-                'inc_range_end'     => 112,
-                'timeperiod'    => 113
-                ),
-            array('%s', '%d', '%d', '%d', '%d')   
-            ); 
+    public static function cronJobForWeek() 
+    {
+        self::dd_update_counter('everyweek');        
+    }
+
+    public static function cronJobForMonth() 
+    {
+        self::dd_update_counter('everymonth');        
     }
 
     public static function dd_schedules($schedules) 
     {
-        if (!isset($schedules['everyfivesec']))
-        {            
-            $schedules['everyfivesec'] = array( 'interval' => 5, 'display' => __('Every Five Sec') );
-        }
+        // Get the defined scheduler
+        $SchedulerData = ddGetCustomSchudler();
 
-        if (!isset($schedules['everyonemin']))
-        {            
-            $schedules['everyonemin'] = array( 'interval' => 60, 'display' => __('Every One Mins') );
-        }
-
-        if (!isset($schedules['everyfivemins']))
+        foreach ($SchedulerData as $key => $value) 
         {
-            $schedules['everyfivemins'] = array( 'interval' => 300, 'display' => __('Every Five Mins') );
+            if (!isset($schedules[$key]))
+            {
+                $DisplayName = ddDefineTheCustomCronEvent();
+                $schedules[$key] = array( 'interval' => $value, 'display' => __($DisplayName[$key]) );
+            }
         }
 
         return $schedules;        
     }
+
+    public static function dd_update_counter($TimePeriod)
+    {
+        if(!class_exists('DDData'))
+        {   
+            return false;
+        }
+
+        $DBData = DDData::getCountersByTimePeriod($TimePeriod);
+
+        if(!$DBData)
+        {
+            return false;
+        }
+
+        global $wpdb;
+
+        $table_prefix = $wpdb->prefix;
+        $dd_counters = $table_prefix.'dd_counters';   
+
+        foreach ($DBData as $key => $value) 
+        {
+            $counterval = self::dd_calculatedValue($value);
+
+            $wpdb->update($dd_counters,
+                    array('value' => $counterval),
+                    array('id' => $value->id),
+                    $format = null, $where_format = null );                   
+        }    
+
+        return true;
+    }
+
+    public static function dd_calculatedValue($rowdata)
+    {
+        $randomizedvalue = null;
+
+        $randomizedvalue = $rowdata->value + (rand($rowdata->inc_range_start, $rowdata->inc_range_end));
+
+        return $randomizedvalue;
+    }
+
+    public static function getTheDDCustomCrons()
+    {
+      $Data = array(
+                    'everyfivemins' => 'dd_fivemincronjob',
+                    'everytwelvehours'  => 'dd_twelvehourscronjob',
+                    'everyday'  => 'dd_dailycronjob',                
+                    'everythreedays'  => 'dd_threedayscronjob',
+                    'everyweek'  => 'dd_everyweekcronjob',
+                    'everymonth'  => 'dd_everymonthcronjob'
+                  );
+      return $Data;
+    }   
 }

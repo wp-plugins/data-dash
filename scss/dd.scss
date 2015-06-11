@@ -1,0 +1,321 @@
+@import 'think201-wp';
+
+.admin-collap-sec header
+{
+	padding: 15px;
+	margin: 10px auto;
+	background-color: #FFFFFF;
+}
+
+.admin-collap-sec header h2
+{
+ 	font-size: 20px;
+    line-height: 30px;
+    margin: 0;
+}
+
+.admin-collap-sec section
+{
+	padding: 15px;
+	margin: 10px auto;
+	background-color: #FFFFFF;
+}
+
+/* CSS Created by CSS CHECKBOX */
+label 
+{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input[type=checkbox].css-checkbox 
+{
+	position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:-1px; 
+    padding:0;
+    border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label 
+{
+	padding-left:25px;
+	height:19px; 
+	display:inline-block;
+	line-height:19px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:15px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+.klaus
+{
+	background-image:url('../img/klaus.png');
+}
+
+input[type=checkbox].css-checkbox.lrg:checked + label.css-label.lrg
+{
+    background-position: 0 -19px;
+}
+
+.dd-fields-container
+{
+    margin: 10px 0;
+}
+
+#dd_map_form .map-checkbox
+{
+    padding: 20px;
+}
+
+.dd-fields-container input, .dd-fields-container textarea, .dd-fields-container select
+{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #dddddd;
+}
+
+/********************************************************
+					Form Builder Style
+*********************************************************/
+.main_section
+{
+  padding: 20px;
+  min-height: 300px;
+  background-color: #ffffff;  
+}
+
+.inputs 
+{
+    border: 1px solid #cccccc;
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;    
+}
+
+.inputs .active
+{
+    display: block !important;
+}
+
+.input_section
+{
+    min-height: 230px;
+    padding: 20px;
+    border-right: 1px dashed #dddddd;
+}
+
+.inputs span 
+{
+    color: #666666;
+    font-size: 20px;
+    display: block;
+    text-align: center;    
+}
+
+.selected_input 
+{
+    border: 1px solid #cccccc;
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.selected_input span 
+{
+    color: #666666;
+    cursor: move;
+    display: block;
+    font-size: 20px;
+    margin: 5px 0 10px;
+    text-align: center;
+}
+
+.form_section 
+{    
+    height: auto; 
+    min-height: 200px;
+    padding: 20px;
+}
+
+.selected_input input
+{
+    border: 1px solid #c1c1c1;
+    height: 40px;
+    margin: 5px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+.selected_input textarea
+{
+    border: 1px solid #c1c1c1;
+    height: 120px;
+    margin: 5px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+.dd-btn 
+{
+    background-color: #666666;
+    border: 1px solid #666666;
+    color: #ffffff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 6px 15px;
+    text-transform: uppercase;
+}
+
+.close-input
+{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    z-index: 99;
+    top: 15px;
+    color: #ff0010;
+    font-size: 18px;
+}
+
+.dd-msg
+{
+    font-size: 16px;
+    display: none;
+}
+
+.dd-required 
+{
+    display: inline-block;
+    float: right;
+}
+
+.dd-required input
+{
+    height: auto !important;
+}
+
+.dd-card 
+{
+    border: 1px solid #c9c9c9;
+    margin: 10px 0;
+}
+
+.dd-card .header 
+{
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.dd-card .header h3
+{
+    margin: 10px;
+}
+
+.dd-card .header .left
+{
+    font-size: 20px;
+}
+
+.dd-card .header .right
+{
+    font-size: 15px;
+    text-align: right;
+}
+
+.dd-card .active
+{
+    display: block !important;
+}
+
+.dd-card .content
+{
+    background-color: #6a6a6a;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: none;
+}
+
+.content p 
+{
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 16px;
+}
+
+.dash-counters
+{
+    width: 100%;
+}
+
+.dash-counters th
+{
+    text-align: left;
+    font-size: 16px;
+    border: 1px solid #dddddd;
+    background-color: hsl(199, 73%, 43%);
+}
+
+.dash-counters td
+{
+    height: 25px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dddddd;
+}
+
+.dd_counter {
+    border: 2px solid #c7c7c7;
+    display: table;
+    padding: 20px 0;
+    margin: 10px auto;
+    width: 99%;
+    text-align: center;
+
+    h2 {
+        color: #1abc9c;
+        font-family: "Roboto",sans-serif;
+        font-size: 2.3rem;
+        font-weight: 600;
+        margin: 0 auto 10px;
+        padding: 0;     
+        display: table;   
+        text-align: center;
+
+        .dd_number {
+            padding: 0 1px;
+        }
+
+        .dd_comma {
+            margin-left: 0 !important;
+            margin-right: 3 !important;
+        }
+    }
+
+    p {
+        color: #767676;
+        font-family: "Roboto",sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        text-align: center;
+        margin-top: 5px;
+        display: table;
+        margin: auto;
+        padding: 0;
+        margin-bottom: 0;
+    }
+}

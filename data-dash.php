@@ -52,7 +52,7 @@ if ( !defined( 'DD_BASENAME' ) )
 define( 'DD_BASENAME', plugin_basename( __FILE__ ) );
 
 if ( !defined( 'DD_VERSION' ) )
-define('DD_VERSION', '1.2' );
+define('DD_VERSION', '1.2.1' );
 
 if ( !defined( 'DD_PLUGIN_DIR' ) )
 define('DD_PLUGIN_DIR', dirname(__FILE__) );

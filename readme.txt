@@ -4,8 +4,8 @@ Tags: Data Dash, website counter, counter
 Requires at least: 3.5.2
 Donate link: http://www.think201.com/
 Tested up to: 4.2.2
-Stable tag: 1.2
-Version: 1.2
+Stable tag: 1.2.1
+Version: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,10 +69,6 @@ To be updated soon
 
 * Initial version of Data Dash Plugin checkin.
 
-= 1.2 =
-
-* Uninstallation of existing plugin is recommended before installing.
-
 == Changelog ==
 
 = 1.0 =
@@ -87,5 +83,7 @@ To be updated soon
 
 = 1.2 =
 - Multiple time interval for cron
-- Shortcode implemented for Counter
 - Small bug fixes
+
+= 1.2.1 =
+- Minor Bug Fixes

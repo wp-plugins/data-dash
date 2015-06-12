@@ -36,7 +36,6 @@ function getDashCounter($id, $jstimeout = 60, $raw = false)
       }	
       ?>
     </h2>
-    <p><?php echo $Counter->name; ?></p>
 </div>
 <?php
 }

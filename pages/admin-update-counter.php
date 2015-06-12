@@ -14,21 +14,21 @@ else
 
 ?>
 
-<div class="wrap">
- 	<h2><?php echo _( 'Update Data Dash' ); ?></h2>
+<div class="wrap t201plugin">
+ 	<h2>
+ 	Update Counter
+ 	<a href="<?php print admin_url('admin.php?page=dd-data-counter'); ?>" class="add-new-h2">All Counters</a>
+ 	</h2>
 	
-	<div id="message" class="updated below-h2 dd-msg dd-success-msg">
+	<div id="message" class="updated below-h2 think201-wp-msg think201-wp-success-msg">
 		<p>Data dash has been updated</p>
 	</div>
-	<div id="message" class="error below-h2 dd-msg dd-error-msg">
+	<div id="message" class="error below-h2 think201-wp-msg think201-wp-error-msg">
 		<p>Data dash has been not updated</p>
 	</div>
  	<div class="tbox">
 		<div class="tbox-heading">
-			<?php $counterlist = 'admin.php?page=dd-data-counter'; ?>
-			<a href="<?php echo wp_nonce_url($counterlist, 'counterlist' ); ?>">
-		  		<button class="button button-primary" type="button">Data Dash Counters</button>
-		  	</a>
+			Edit Counter Details
 		  	<a href="http://labs.think201.com/plugins/data-dash" target="_blank" class="pull-right">Need help?</a>
 		</div>
 		<div class="tbox-body">

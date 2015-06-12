@@ -30,7 +30,6 @@ class DDView
             $i++;
         }   
         ?>
-        <p><?php echo $Counter->name; ?></p>
         <?php
     }
 }

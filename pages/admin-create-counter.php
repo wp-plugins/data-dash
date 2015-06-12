@@ -1,18 +1,18 @@
-<div class="wrap">
- 	<h2><?php echo _( 'Create Data Dash' ); ?></h2>
+<div class="wrap t201plugin">
+ 	<h2>
+ 	Create Counter
+ 	<a href="<?php print admin_url('admin.php?page=dd-data-counter'); ?>" class="add-new-h2">All Counters</a>
+ 	</h2>
 	
-	<div id="message" class="updated below-h2 dd-msg dd-success-msg">
-		<p>Data dash has been created</p>
+	<div id="message" class="updated below-h2 think201-wp-msg think201-wp-success-msg">
+		<p>Data dash Counter has been created</p>
 	</div>
-	<div id="message" class="error below-h2 dd-msg dd-error-msg">
-		<p>Data dash has been not created</p>
+	<div id="message" class="error below-h2 think201-wp-msg think201-wp-error-msg">
+		<p>Data dash Counter has been not created</p>
 	</div>
  	<div class="tbox">
 		<div class="tbox-heading">
-			<?php $counterlist = 'admin.php?page=dd-data-counter'; ?>
-			<a href="<?php echo wp_nonce_url($counterlist, 'counterlist' ); ?>">
-		  		<button class="button button-primary" type="button">Data Dash Counters</button>
-		  	</a>
+		  	Add the details to create the counter.
 		  	<a href="http://labs.think201.com/plugins/data-dash" target="_blank" class="pull-right">Need help?</a>
 		</div>
 		<div class="tbox-body">
@@ -30,13 +30,10 @@
 		                        <input type="text" id="value" name="value" placeholder="Enter Vaue for Counter">
 		                    </div>
 		                    <div class="dd-fields-container">  
-		                        <label for="inc_range_start">Increment Start Value:</label>              
+		                        <label for="inc_range_start">Increment Value Range:</label>              
 		                        <input type="text" id="inc_range_start" name="inc_range_start" placeholder="Enter Increment Value">
-		                    </div>
-		                    <div class="dd-fields-container">  
-		                        <label for="inc_range_end">Increment End Value:</label>              
 		                        <input type="text" id="inc_range_end" name="inc_range_end" placeholder="Enter Increment Value">
-		                   	</div>
+		                    </div>
 		                    <div class="dd-fields-container">  
 		                        <label for="timeperiod">Time Period: (In Minutes)</label>              
 		                    		<select id="timeperiod" name="timeperiod">

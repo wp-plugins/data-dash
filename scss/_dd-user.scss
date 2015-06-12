@@ -1,0 +1,12 @@
+a,img,button
+{
+	outline: none !important;
+}
+
+
+select.error, input.error, textarea.error 
+{    
+	color: #000000;
+	border: 1px solid #ac5330;
+	transition-duration: 1s;
+}

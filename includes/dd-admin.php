@@ -19,7 +19,7 @@ class DDAdmin
 
         add_action( 'init', array($this, 'userFiles')); 
 
-        add_action('wp_footer', array($this, 'ddUserInlineJS'), 20);
+        //add_action('wp_footer', array($this, 'ddUserInlineJS'), 20);
     }
 
     public function fileInlcudes()

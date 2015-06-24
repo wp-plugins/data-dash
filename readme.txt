@@ -4,8 +4,8 @@ Tags: Data Dash, website counter, counter
 Requires at least: 3.5.2
 Donate link: http://www.think201.com/
 Tested up to: 4.2.2
-Stable tag: 1.2.1
-Version: 1.2.1
+Stable tag: 1.2.2
+Version: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,11 +23,12 @@ Data dash allows you to create dynamic counters for your website pages.
 - Provide range for the incremental value
 - Easy integration to UI using shortcode & function
 
-* Like the plugin or want features? Tweet to us @think201
+* Like the plugin or want features? Tweet to us [@think201](https://twitter.com/think201)
+* Also you can read more about the plugin & its development at [Think201 Labs](http://labs.think201.com)
 
 = Plugin Support =
 
-Dedicated Support: talk to us on Twitter @think201
+Dedicated Support: Talk to us on Twitter [@think201](https://twitter.com/think201)
 
 To raise issues or if you have a question for us, post to the support forum here https://wordpress.org/support/plugin/data-dash and we are happy to help.
 
@@ -87,3 +88,7 @@ To be updated soon
 
 = 1.2.1 =
 - Minor Bug Fixes
+
+= 1.2.2 =
+- Removed the Javascript client side request for counters.
+- Bug Fixes

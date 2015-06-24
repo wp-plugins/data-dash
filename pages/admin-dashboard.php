@@ -1,5 +1,8 @@
 <div class="wrap t201plugin">
-	<h2>Dashboard</h2>
+	<h2>
+		Dashboard
+		<a href="<?php print admin_url('admin.php?page=dd-data-counter'); ?>" class="add-new-h2">All Counters</a>
+	</h2>
 
 	<div class="tbox">
 		<div class="tbox-heading">

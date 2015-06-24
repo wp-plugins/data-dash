@@ -8,6 +8,13 @@ function getDashCounter($id, $jstimeout = 60, $raw = false)
   }
   
   $Counter = DDData::getCounter($id);
+
+  if(empty($Counter))
+  {
+      return;
+  }
+
+
   $jstimeout = $jstimeout * 60000;
 	
 	$Numbers = str_split(number_format($Counter->value));
@@ -20,18 +27,12 @@ function getDashCounter($id, $jstimeout = 60, $raw = false)
         $Length = count($Numbers);
         foreach($Numbers as $key => $number)
         {						
-        ?>          
-          <?php 
           if($number == ',')
           {
-          ?>
-            <span class="dd_comma"><?php echo $number; ?></span>
-          <?php
+          ?><span class="dd_comma"><?php echo $number; ?></span><?php
           }
           else {
-            ?>
-              <span class="dd_number"><?php echo $number; ?></span>       
-            <?php
+            ?><span class="dd_number"><?php echo $number; ?></span><?php
           }
       }	
       ?>
